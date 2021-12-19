@@ -1,0 +1,30 @@
+.wrapper {
+    background-color: #ffffff;
+    /*display:block;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 110px;
+    margin: 10px 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
+    padding:10px 10px;
+
+}
+
+.wrapper:hover {
+    box-shadow: 0px 16px 36px rgba(0, 0, 0, 0.05);
+}
+
+.btn_link {
+    width: 16px;
+    height: 16px;
+    border: none;
+    background: url(src/img/arrow_forward_24px.png) no-repeat;
+    cursor: pointer;
+    left: 100px;
+    transform: scale(0.7);
+}
+.btn_link:hover {
+    transform: scale(1);
+}
