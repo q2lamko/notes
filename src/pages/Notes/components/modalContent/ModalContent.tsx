@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useState} from 'react';
-import style from "../pages/Home.module.css";
+import style from "../../Notes.module.css";
 
 
 type PropsType = {

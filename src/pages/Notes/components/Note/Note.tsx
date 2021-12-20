@@ -1,10 +1,10 @@
 import React, {FC, useState} from "react";
 import s from './Note.module.css'
-import LinkArray from "./LinkArray";
+import LinkArrow from "../LinkArrow/LinkArrow";
 
-type PropsType = {
+export type PropsType = {
     title: string
-    data: string
+    date: string
     id:string
     removeNote:(noteId:string) => void
 }
@@ -19,9 +19,9 @@ export const Note: FC<PropsType> = (props) => {
         <div className={s.content}>
             <div className={s.wrapper}>
                 <div>{props.title}</div>
-                <div><h5>{props.data}</h5></div>
+                <div><h5>{props.date}</h5></div>
                 {/*<button onClick={removeNote}>remove</button>*/}
-                <LinkArray/>
+                <LinkArrow id={props.id}/>
             </div>
 
         </div>

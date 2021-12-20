@@ -1,14 +1,14 @@
 import React, {FC, useCallback, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {RootStateType} from "../state/store";
-import {addNoteAC, NoteType, removeNoteAC} from "../state/notes-reducer";
-import {AddItemForm} from "../components/AddItemForm";
-import {Note} from '../components/Note';
-import style from './Home.module.css'
+import {RootStateType} from "../../state/store";
+import {addNoteAC, NoteType, removeNoteAC} from "../../state/reducers/notes-reducer";
+import {AddItemForm} from "../../components/addItemForm/AddItemForm";
+import {Note} from './components/Note/Note';
+import style from './Notes.module.css';
 import classNames from "classnames";
-import ModalContent from "../components/ModalContent";
+import ModalContent from "./components/modalContent/ModalContent";
 
-const Home: FC = () => {
+const Notes: FC = () => {
     const notes = useSelector<RootStateType, Array<NoteType>>(state => state.notes)
     const dispatch = useDispatch()
     const [modalActive, setModalActive] = useState(false)
@@ -51,7 +51,7 @@ const Home: FC = () => {
                             return <Note
                                 key={nt.id}
                                 title={nt.title}
-                                data={nt.date}
+                                date={nt.date}
                                 id={nt.id}
                                 removeNote={removeNote}
                             />
@@ -63,4 +63,4 @@ const Home: FC = () => {
     );
 };
 
-export default Home;
+export default Notes;

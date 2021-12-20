@@ -1,6 +1,5 @@
 .wrapper {
     background-color: #ffffff;
-    /*display:block;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,7 +19,7 @@
     width: 16px;
     height: 16px;
     border: none;
-    background: url(src/img/arrow_forward_24px.png) no-repeat;
+    background: url(../../../../assets/arrow_forward_24px.png) no-repeat;
     cursor: pointer;
     left: 100px;
     transform: scale(0.7);

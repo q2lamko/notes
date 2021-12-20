@@ -1,22 +1,27 @@
 import React from "react";
-import {Note} from "../components/Note";
-import {NoteForm} from "../pages/NoteForm";
-import Home from "../pages/Home";
-
+import {NoteForm} from "../pages/NoteForm/NoteForm";
+import Notes from "../pages/Notes/Notes";
+import Login from "../pages/login/Login";
 
 export interface IRoute {
     path: string
     element: React.ComponentType
 }
 
-export enum RouteNames  {
-    HOME='/',
-    NOTE='/note',
-    MISSING='*'
+export enum RouteNames {
+    LOGIN = '/login',
+    NOTES = '/',
+    NOTE = '/note/:id',
+    MISSING = '*'
 }
 
-export const routes: IRoute[] = [
-    {path: RouteNames.HOME, element: Home},
+export const publicRoutes: IRoute[] = [
+    {path: RouteNames.LOGIN, element: Login},
+    {path: RouteNames.MISSING, element: Login},
+]
+export const privateRoutes: IRoute[] = [
+    {path: RouteNames.LOGIN, element: Login},
+    {path: RouteNames.NOTES, element: Notes},
     {path: RouteNames.NOTE, element: NoteForm},
-    {path: RouteNames.MISSING, element: Home},
+    {path: RouteNames.MISSING, element: Notes},
 ]
