@@ -1,16 +1,10 @@
 {
   "notes": [
     {
-      "title": "123",
-      "description": "123",
+      "title": "Название заметки",
+      "description": "<p><strong><em>Это моя первая заметка!</em></strong></p>",
       "date": "21.21.21",
       "id": 1
-    },
-    {
-      "title": "123",
-      "description": "<h2><strong>1233</strong></h2>",
-      "date": "21.21.21",
-      "id": 2
     }
   ]
 }

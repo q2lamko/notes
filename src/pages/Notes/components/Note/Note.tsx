@@ -17,8 +17,8 @@ export const Note: FC<PropsType> = (props) => {
   return (
     <div className={s.content}>
       <div className={s.wrapper} >
-        <div>{props.title}</div>
-        <div><h6>{props.date}</h6></div>
+        <div className={s.title}>{props.title}</div>
+        <div className={s.date}>{props.date}</div>
         <button onClick={removeNote}>удалить</button>
         <div>
           <LinkArrow id={props.id}  />

@@ -30,3 +30,11 @@
     opacity: 1;
 }
 
+.title {
+    font-size: 16px;
+}
+
+.date {
+    color: #A1A4B5;
+    font-size: 13px;
+}

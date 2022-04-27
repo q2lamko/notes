@@ -33,7 +33,7 @@ const ModalContent = React.memo((props: PropsType) => {
 
   return (
     <div>
-      <h1>Добавить</h1>
+
       <div>
         <h5>Название заметки</h5>
         <input

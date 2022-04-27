@@ -8,15 +8,12 @@ h5 {
     color: #999999;
 }
 
-p {
-    margin: 20px;
-}
+
 h1 {
     position: absolute;
     width: 161px;
     height: 56px;
-    left: calc(50% - 161px/2 - 450px);
-    top: 152px;
+    padding-left: 20px;
 
 
     font-style: normal;
@@ -27,9 +24,6 @@ h1 {
 
     display: flex;
     align-items: center;
-
-    /* text */
-
     color: #333333;
 }
 

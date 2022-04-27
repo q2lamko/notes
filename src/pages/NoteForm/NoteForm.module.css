@@ -1,24 +1,19 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 h5 {
     color: #999999;
 }
-
 p {
-    margin: 20px;
+    padding-top: 20px;
 }
 
-/*.wrapper {*/
-/*    background-color: #e5e5e5;*/
-/*    display: flex;*/
-/*    width: 1920px;*/
-/*    justify-content: center;*/
-/*}*/
-
+.wrapper {
+    padding: 20px;
+}
 .wrapper_content {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+}
+.title {
+    font-size: 30px;
 
 }

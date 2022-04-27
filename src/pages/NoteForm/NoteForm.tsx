@@ -6,7 +6,7 @@ import {NoteType} from '../../state/reducers/notes/types';
 import {useActions} from '../../hooks/useActions';
 import {RichTextEditor} from "@mantine/rte";
 import style from './NoteForm.module.css'
-import {log} from "vite-plugin-imp/dist/shared";
+import {Button} from "antd";
 
 export const NoteForm: FC = () => {
   const {deleteNote} = useActions();
@@ -48,9 +48,11 @@ export const NoteForm: FC = () => {
     <div className={style.wrapper}>
       <div className={style.wrapper_content}>
         <div>
-          <Link to="/notes">Вернуться </Link>
+          <Button><Link to="/notes">Вернуться </Link></Button>
         </div>
-        <div><p>Название заметки: {note?.title}</p></div>
+        <div className={style.title}>
+          <p> {note?.title}</p>
+        </div>
         <div>
           {editMode
           ? (<RichTextEditor controls={[
@@ -62,13 +64,11 @@ export const NoteForm: FC = () => {
           : (<p>{note?.description}</p>)}
         </div>
         <div>
-
-          {/*<p>{note?.description}</p>*/}
           <p>{note?.date}</p>
         </div>
         <div>
-          <button onClick={RemoveNote}>Удалить</button>
-          <button onClick={onTextDescriptionChange}>сохранить</button>
+          <Button onClick={RemoveNote}>Удалить</Button>
+          <Button onClick={onTextDescriptionChange}>сохранить</Button>
         </div>
 
       </div>
