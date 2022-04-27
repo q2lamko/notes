@@ -1,5 +1,4 @@
-import {IUser} from "../../../models/IUser";
-
+import { IUser } from '../../../models/IUser';
 
 export interface AuthStateType {
     isAuth: boolean

@@ -1,0 +1,14 @@
+/*@import '~antd/dist/antd.css';*/
+
+.h100 {
+    height: calc(100vh - 64px);
+}
+
+.container {
+    width: 1180px;
+    background-color: red;
+    margin-left:auto;
+    margin-right: auto;
+
+}
+

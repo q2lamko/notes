@@ -11,18 +11,34 @@ h5 {
 p {
     margin: 20px;
 }
+h1 {
+    position: absolute;
+    width: 161px;
+    height: 56px;
+    left: calc(50% - 161px/2 - 450px);
+    top: 152px;
 
-.main {
-    padding: 20px;
-    width: 900px;
-    height: 1000px;
-    background-color: #ffffff;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 140%;
+    /* identical to box height, or 56px */
+
+    display: flex;
+    align-items: center;
+
+    /* text */
+
+    color: #333333;
 }
 
 .notes_wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px;
+    grid-gap: 20px 20px;
 }
 
 .header_wrapper {
@@ -30,14 +46,8 @@ p {
     display: flex;
     justify-content: space-between;
 }
-
-.content {
-    display: flex;
-    flex-direction: column;
-}
-
 .openBtn {
-    /*margin: 10px 20px;*/
+    margin: 10px 20px;
     font-size: 1rem;
 }
 
@@ -46,10 +56,7 @@ p {
     background-color: #ffffff;
     margin: 10px 10px;
     padding: 10px 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
+
 }
 
 .input {
@@ -83,5 +90,4 @@ p {
     border: none;
     outline: none;
     cursor: pointer;
-
 }

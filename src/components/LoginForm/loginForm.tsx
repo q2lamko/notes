@@ -1,40 +1,58 @@
-import React, {FC} from 'react';
-import {Button, Form, Input} from "antd";
-import {rules} from '../../utils/rules';
-import {useDispatch} from "react-redux";
-import {AuthAC} from "../../state/reducers/auth/action-reators";
+import React, { FC, useState } from 'react';
+import { Button, Form, Input } from 'antd';
+import { rules } from '../../utils/rules';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useActions } from '../../hooks/useActions';
 
+const a = 1;
 const LoginForm: FC = () => {
-    const dispatch = useDispatch()
-    const submit = () => {
-        dispatch(AuthAC.login('user','123'))
-    }
+  const { error, isLoading } = useTypedSelector((state) => state.authReducer);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const { login } = useActions();
 
-    return (
-        <Form
-        onFinish={submit}
-        >
-            <Form.Item
-                label="Имя пользователя"
-                name="username"
-                rules={[rules.required('Пожалуйста, введите имя.')]}
-            >
-                <Input/>
-            </Form.Item>
-            <Form.Item
-                label="Пароль"
-                name="password"
-                rules={[rules.required('Пожалуйста, введите пароль.')]}
-            >
-                <Input/>
-            </Form.Item>
-            <Form.Item>
-                <Button type="primary" htmlType="submit">
-                    Войти
-                </Button>
-            </Form.Item>
-        </Form>
-    );
+  const submit = () => {
+    // dispatch(AuthAC.login(username, password))
+    login(username, password);
+  };
+
+  return (
+    <Form
+      onFinish={submit}
+    >
+      {error && (
+      <div style={{ color: 'red' }}>
+        {error}
+      </div>
+      )}
+      <Form.Item
+        label="Имя пользователя"
+        name="username"
+        rules={[rules.required('Пожалуйста, введите имя.')]}
+      >
+        <Input
+          value={username}
+          onChange={(e) => setUsername(e.currentTarget.value)}
+        />
+      </Form.Item>
+      <Form.Item
+        label="Пароль"
+        name="password"
+        rules={[rules.required('Пожалуйста, введите пароль.')]}
+      >
+        <Input
+          value={password}
+          onChange={(e) => setPassword(e.currentTarget.value)}
+          type="password"
+        />
+      </Form.Item>
+      <Form.Item>
+        <Button type="primary" htmlType="submit" loading={isLoading}>
+          Войти
+        </Button>
+      </Form.Item>
+    </Form>
+  );
 };
 
 export default LoginForm;
